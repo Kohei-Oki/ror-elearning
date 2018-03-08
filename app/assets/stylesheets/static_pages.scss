@@ -1,3 +1,23 @@
-// Place all the styles related to the static_pages controller here.
-// They will automatically be included in application.css.
-// You can use Sass (SCSS) here: http://sass-lang.com/
+.home_h1{
+	padding-top: 80px;
+}
+
+h1{
+	font: 400% 'Avenir Next',;
+	text-align: center;
+	text-shadow: #000 1px 1px 0;
+}
+
+body{
+	background-image: url("IMG_3170.jpg");
+}
+
+.button{
+	text-align: center;
+	padding-top: 20px;
+	a{
+	width:100px;
+	padding:10px;
+	text-align:center;
+	}
+}
