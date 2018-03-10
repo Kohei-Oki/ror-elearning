@@ -1,0 +1,2 @@
+class LessonWordController < ApplicationController
+end
