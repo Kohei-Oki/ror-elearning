@@ -2,20 +2,22 @@
 
 <h1>Category</h1>
 <div class ="box">
-<ul class="categories">
-  <% @categories.each do |category| %>
-    <li>
-      <%= category.title %>
-      <%= category.description %>
-      <%= link_to "Show", category %>
-      <%= link_to "Edit", edit_category_path(category) %>
-      <%= link_to "Delete", category, method: :delete, data: {confirm: "You sure?"} %>
-    </li>
-  <% end %>
-</ul>
-<div class="button">
-    <a href="/categories/new">
-    <button class="btn btn-primary btn-lg">Add</button>
-    </a>
-</div>
+  <ul class="categories">
+    <% @categories.each do |category| %>
+      <li>
+        <a href="/categories/">
+          <%= category.title %>
+        </a>
+        <%= category.description %>
+        <%= link_to "Show", category %>
+        <%= link_to "Edit", edit_category_path(category) %>
+        <%= link_to "Delete", category, method: :delete, data: {confirm: "You sure?"} %>
+      </li>
+    <% end %>
+  </ul>
+  <div class="button">
+      <a href="/categories/new">
+      <button class="btn btn-primary btn-lg">Add</button>
+      </a>
+  </div>
 </div>
