@@ -19,7 +19,7 @@ class CategoriesController < ApplicationController
       flash[:info] = "New category is created"
       redirect_to '/categories'
     else
-      redirect_to '/categories'
+      render 'new'
     end
   end
 
