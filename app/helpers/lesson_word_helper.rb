@@ -1,0 +1,2 @@
+module LessonWordHelper
+end

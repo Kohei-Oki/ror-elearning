@@ -10,7 +10,14 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20180308013734) do
+ActiveRecord::Schema.define(version: 20180310092254) do
+
+  create_table "categories", force: :cascade do |t|
+    t.string "title"
+    t.text "description"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
 
   create_table "users", force: :cascade do |t|
     t.string "name"
@@ -18,6 +25,24 @@ ActiveRecord::Schema.define(version: 20180308013734) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.string "password_digest"
+    t.boolean "admin", default: false
+  end
+
+  create_table "word_answers", force: :cascade do |t|
+    t.integer "word_id"
+    t.text "content"
+    t.boolean "is_correct"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["word_id"], name: "index_word_answers_on_word_id"
+  end
+
+  create_table "words", force: :cascade do |t|
+    t.integer "category_id"
+    t.text "content"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["category_id"], name: "index_words_on_category_id"
   end
 
 end
