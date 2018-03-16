@@ -1,0 +1,20 @@
+<% provide(:title, 'Word') %>
+
+<h1>Word</h1>
+<div class ="box">
+  <ul class="words">
+    <% @words.each do |word| %>
+      <li>
+        <%= word.content %>
+        <%= link_to "Show", [word.category,word] %>
+        <%= link_to "Edit", edit_category_word_path(word.category.id,word.id) %>
+        <%= link_to "Delete", [word.category,word], method: :delete, data: {confirm: "You sure?"} %>
+      </li>
+    <% end %>
+  </ul>
+  <div class="button">
+      <a href="/categories/:id/word">
+      <button class="btn btn-primary btn-lg">Add Word</button>
+      </a>
+  </div>
+</div>

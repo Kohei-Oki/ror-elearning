@@ -5,9 +5,7 @@
   <ul class="categories">
     <% @categories.each do |category| %>
       <li>
-        <a href="/categories/">
-          <%= category.title %>
-        </a>
+        <%= link_to category.title, category %>
         <%= category.description %>
         <%= link_to "Show", category %>
         <%= link_to "Edit", edit_category_path(category) %>

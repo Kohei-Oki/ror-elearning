@@ -1,0 +1,14 @@
+<h1>Edit word_answer</h1>
+<div class="box">
+
+<%= form_for([@word.category,@word,@word_answer]) do |a| %>
+  <div class ="field">
+    <%= a.label :Answer %>
+    <%= a.text_field :content %>
+    <%= a.radio_button :is_correct, true %>
+  </div>
+
+  <div class="actions">
+    <%= a.submit %>
+  </div>
+<% end %>

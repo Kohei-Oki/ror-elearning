@@ -1,0 +1,15 @@
+<h1>word</h1>
+
+<div class="box">
+    <%= form_for(@word, url: category_words_path) do |f| %>
+
+      <%= render "shared/error_messages", object: f.object %> 
+
+      <%= hidden_field_tag :category_id, @word.category.id %>
+
+      <%= f.label :content %>
+      <%= f.text_field :content, class: 'form-control' %>
+
+      <%= f.submit "Create new word", class: "btn btn-primary" %>
+    <% end %>
+</div>ß

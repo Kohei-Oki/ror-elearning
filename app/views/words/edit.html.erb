@@ -1,0 +1,26 @@
+<h1>Edit word</h1>
+<div class="box">
+<%= form_for([@category,@word]) do |f| %>
+
+ <% if @word.errors.any? %>
+  <div id="error_explanation">
+    <h2><%= pluralize(@word.errors.count,"error") %> prohibited this user from being saved:</h2>
+    <ul>
+    <% @word.errors.full_messages.each do |message| %>
+      <li><%= message %></li>
+    <% end %>
+    </ul>
+  </div>
+ <% end%>
+
+  <div class="field">
+    <%= f.label :content %><br>
+    <%= f.text_field :content %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>
+
+<%= link_to "Back", categories_path %>
+</div>

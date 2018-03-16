@@ -7,9 +7,25 @@
 </p>
 
 <p>
-  <strong>Description</strong>
+  <strong>Description:</strong>
   <%= @category.description %>
 </p>
+<div class="button">
+    <%= link_to "Add Word" , new_category_word_path(@category.id), class: "btn btn-primary btn-lg"%>
 
+</div>
 <%= link_to "View All Categories", categories_path %>
+</div>
+
+<h1>Word</h1>
+<div class ="box">
+  <ul class="words">
+    <% @category.words.each do |word| %>
+      <li>
+        <%= word.content %>
+        <%= link_to "Show", [word.category,word] %>
+        <%= link_to "Edit", edit_category_word_path(word.category.id,word.id) %>
+        <%= link_to "Delete", [word.category,word], method: :delete, data: {confirm: "You sure?"} %>
+      </li>
+    <% end %>
 </div>
