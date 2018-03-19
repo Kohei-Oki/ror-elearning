@@ -1,6 +1,7 @@
 .box{
   padding: 2em 2em;
   margin: 2em 2em;
+  font-size :20px;
   font-weight: bold;
   background: #fff;
   border: solid 3px #6091d3;
@@ -10,4 +11,8 @@
 .box p{
   margin: 0;
   padding: 0;
+}
+
+.box ul{
+  list-style :none;
 }

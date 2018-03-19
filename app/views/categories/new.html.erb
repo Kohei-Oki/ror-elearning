@@ -3,7 +3,8 @@
 
 <div class="box">
     <%= form_for(@category, url: categories_path) do |f| %>
-      <%= render "shared/error_messages", object: f.object %>
+
+      <%= render "shared/error_messages", object: f.object %> 
 
       <%= f.label :title %>
       <%= f.text_field :title, class: 'form-control' %>

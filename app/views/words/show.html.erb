@@ -1,0 +1,46 @@
+<h1>Word Details</h1>
+
+<div class ="box">
+<p>
+  <strong>Content:</strong>
+  <%= @word_view.content %>
+</p>
+<p>
+  <strong>Word Answers:</strong>
+</p>
+  <ul class="word_answers">
+    <% if @word_view.word_answers.any? %>
+      <% @word_view.word_answers.each do |answer| %>
+        <li>
+          <%= answer.content %>
+          <%= answer.is_correct %>
+          <%= link_to "Edit", edit_category_word_word_answer_path(@word_view.category,@word_view,answer) %>
+          <%= link_to "Delete", [answer.word.category,answer.word,answer], method: :delete, data: {confirm: "You sure?"} %>
+        </li>
+
+      <% end %>
+    <% end %>
+    <br>
+  <p><%= link_to "Back to Words", category_path(@category)  %></p>
+</div>
+
+<% if @word_view.word_answers.empty? %>
+<div class ="box">
+<h2>Create Word answers</h2>
+<div class ="box">
+  <%= form_tag category_word_word_answers_path(category_id: @category.id, word_id: @word.id) do %>
+   <% @answers.each do |answer| %>
+      <%= fields_for 'answers[]', answer do |a| %>
+      <%= render "shared/error_messages", object: a.object %> 
+        <div class ="field">
+         <%= a.label :Answer %>
+         <%= a.text_field :content %>
+         <%= a.radio_button :is_correct, true %>
+         </div>
+       <% end %>
+      <% end %>
+    <%= submit_tag "Create new word_answer", class: "btn btn-primary" %>
+    <p><%= link_to "Back to Words", category_path(@category)  %></p>
+  <% end %>
+</div>
+<% end %>
