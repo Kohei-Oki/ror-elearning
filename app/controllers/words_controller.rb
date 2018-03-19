@@ -30,9 +30,9 @@ class WordsController < ApplicationController
   end
 
   def edit
-    @word = Word.find(params[:word_id])
+    @word = Word.find(params[:id])
     @category = Category.find(params[:category_id])
-    @word_answer = WordAnswer.find(:id)
+   # @word_answer = WordAnswer.find(:id)
   end
 
   def update

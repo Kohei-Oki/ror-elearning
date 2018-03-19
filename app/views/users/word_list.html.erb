@@ -1,0 +1,47 @@
+<% provide(:title, "Category") %>
+<!DOCTYPE html>
+<html>
+  <head>
+    <title><%= yield(:title) %> | E lerning</title>
+  </head>
+  <body>
+
+    <div class="category">
+      <ul>
+      <li>
+        <p>Category</p>
+        <select name="select">
+       <option value="Basic 500">Basic 500</option>
+       <option value="At a Restaurant">At a Restaurant</option>
+       <option value="On a Trip">On a Trip</option>
+      </select></li>
+      <li><input type="radio" name="q1" value="learned"> Learned </li>
+      <li><input type="radio" name="q2" value="not learned"> Not learned </li>
+      <li><input type="radio" name="q3" value="All"> All </li>
+      </ul>
+      <div class="top">
+        <div class ="button">
+          <a href="/users/new">
+           <button class="btn btn-primary btn-lg">Filiter</button>
+          </a>
+        </div>
+        <div class ="button">
+          <a href="/users/new">
+            <button class="btn btn-primary btn-lg">PDF</button>
+          </a>
+        </div>
+      </div>
+    </div>
+
+    <div class="row">
+
+      <aside class="col-md-6">
+        <p> word</p>
+      </aside>
+
+      <aside class="col-md-6">
+      
+        <p>word</p>
+      </aside>
+    </div>
+</body>

@@ -7,11 +7,13 @@ Rails.application.routes.draw do
 
   resources :users
   
-  resources :categories do
-    resources :words do
-      resources :word_answers
-  end
-end
+  
+    resources :categories, :path => 'admin/categories' do
+      resources :words do
+        resources :word_answers
+      end
+    end
+  
 
   resources :password_resets, only: [:new, :create, :edit, :update]
 end
