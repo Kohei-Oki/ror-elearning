@@ -5,7 +5,7 @@ Rails.application.routes.draw do
   post '/login', to:'sessions#create'
   delete '/logout', to:'sessions#destroy'
 
-  get '/category', to: 'user_categories#index'
+  get '/user/categories', to: 'user_categories#index'
 
   resources :users
   
