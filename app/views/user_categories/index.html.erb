@@ -1,0 +1,26 @@
+<% provide(:title, "Category") %>
+<!DOCTYPE html>
+<html>
+  <head>
+    <title><%= yield(:title) %> | E lerning %></title>
+  </head>
+  <body>
+  <div class="container">
+  <div class="row">
+    <% @categories.each do |category| %>
+      <aside class="col-md-6">
+        <h2><%= category.title %></h2>
+        <p><%= category.description %></p>
+        <p>You've leaned - </p>
+          <a href="/users/new">
+           <button class="btn btn-primary btn-lg">learn</button>
+          </a>
+      </aside>
+      <aside class="col-md-6">
+        <%= image_tag 'images.png', :size =>'400x200' %>
+      </aside>
+      <% end %>
+    </div>
+    </div>
+     <%= will_paginate @categories, previous_label: '<i class="glyphicon glyphicon-hand-left"></i>', next_label: '<i class="glyphicon glyphicon-hand-right"></i>' %>
+  </body>
