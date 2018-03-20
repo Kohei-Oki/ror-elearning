@@ -5,8 +5,9 @@ Rails.application.routes.draw do
   post '/login', to:'sessions#create'
   delete '/logout', to:'sessions#destroy'
 
+  get '/category', to: 'user_categories#index'
+
   resources :users
-  
   
     resources :categories, :path => 'admin/categories' do
       resources :words do
@@ -14,6 +15,5 @@ Rails.application.routes.draw do
       end
     end
   
-
   resources :password_resets, only: [:new, :create, :edit, :update]
 end
