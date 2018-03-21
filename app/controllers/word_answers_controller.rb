@@ -30,7 +30,15 @@ class WordAnswersController < ApplicationController
 
   def update
     word_answer = WordAnswer.find(params[:id])
+    
     if word_answer.update_attributes(word_answer_params(params[:word_answer]))
+      word_answer.word.word_answers.each do |answer|
+        unless word_answer === answer
+          answer.is_correct = false;
+          answer.save
+        end
+      end
+
       flash[:success] = "Word_answer updated"
       redirect_to category_word_path(word_answer.word.category,word_answer.word)
       else
