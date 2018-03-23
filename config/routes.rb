@@ -8,7 +8,11 @@ Rails.application.routes.draw do
   get '/user/categories', to: 'user_categories#index'
 
   resources :users
-  
+
+  resources :lessons do
+    resources :lesson_words
+  end
+
     resources :categories, :path => 'admin/categories' do
       resources :words do
         resources :word_answers
