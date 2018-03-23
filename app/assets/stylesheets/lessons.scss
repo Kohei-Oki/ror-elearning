@@ -1,3 +1,13 @@
-// Place all the styles related to the lessons controller here.
-// They will automatically be included in application.css.
-// You can use Sass (SCSS) here: http://sass-lang.com/
+.result{
+  margin :15px;
+  padding :15px;
+}
+
+.result th{
+  padding :20px 40px;
+  text-decoration: underline;
+}
+
+.result td{
+  padding :10px 40px;
+}

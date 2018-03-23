@@ -7,8 +7,15 @@ class LessonWordsController < ApplicationController
 
   def update
     @lesson_word = LessonWord.find(params[:id])
+    @lesson = @lesson_word.lesson
     if @lesson_word.update_attributes(lesson_word_params)
-      redirect_to lesson_lesson_word_path
+      if @lesson_word != @lesson.lesson_words.last
+        i = @lesson.lesson_words.index(@lesson_word)
+        redirect_to lesson_lesson_word_path(@lesson, @lesson.lesson_words[i+1])
+      else 
+        @lesson.update_attributes(result: @lesson.correct_answers.count)
+        redirect_to @lesson
+      end
     end
   end
 
