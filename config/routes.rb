@@ -7,7 +7,11 @@ Rails.application.routes.draw do
 
   get '/user/categories', to: 'user_categories#index'
 
-  resources :users
+  resources :users do
+    member do
+      get :following, :followers
+    end
+  end
 
   resources :lessons do
     resources :lesson_words
@@ -19,5 +23,7 @@ Rails.application.routes.draw do
       end
     end
   
+  resources :relationships, only: [:create, :destroy]
+
   resources :password_resets, only: [:new, :create, :edit, :update]
 end

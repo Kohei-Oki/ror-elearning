@@ -1,23 +1,24 @@
-.home_h1{
-	padding-top: 80px;
-}
-
 h1{
-	font: 400% 'Avenir Next',;
-	text-align: center;
-	text-shadow: #000 1px 1px 0;
+  font: 400% 'Avenir Next',;
+  text-align: center;
+  text-shadow: #000 1px 1px 0;
 }
 
 .home{
-	background-image: url("IMG_3170.jpg");
+  background-image: url("IMG_3170.jpg");
 }
 
+
 .button{
-	text-align: center;
-	padding-top: 20px;
-	a{
-	width:100px;
-	padding:10px;
-	text-align:center;
-	}
+  text-align: center;
+  padding-top: 20px;
+  a{
+  width:100px;
+  padding:10px;
+  text-align:center;
+  }
+}
+
+.home p{
+  text-align: center;
 }
