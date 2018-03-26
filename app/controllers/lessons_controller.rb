@@ -15,8 +15,4 @@ class LessonsController < ApplicationController
      redirect_to lesson_lesson_word_path(lesson,lesson.lesson_words.first)
   end
 
-  def update
-    
-  end
-
 end
