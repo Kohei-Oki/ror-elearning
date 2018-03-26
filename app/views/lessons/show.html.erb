@@ -1,0 +1,33 @@
+<% provide(:title, "Home") %>
+<!DOCTYPE html>
+<html>
+  <head>
+    <title><%= yield(:title) %> | E lerning</title>
+  </head>
+  <body>
+    <div class="container">
+      <div class ="box">
+        <p><%= @lesson.category.title %></p>
+        <p>Result :  <%= @lesson.result %> / <%= @lesson.lesson_words.count %></p>
+        <table class="result">
+          <tr>
+           <th>  </th>
+           <th> Question </th>
+           <th> Your answer </th>
+          </tr>
+            <% @lesson.lesson_words.each do |lesson| %>
+          <tr>
+           <td><% if lesson.word_answer.is_correct? %>
+                 <%= image_tag 'correct.png', :size => '20x20'  %>
+                <% else %>
+                  <%= image_tag 'wrong.png', :size => '20x20' %>
+                <% end %></td>
+           <td><%= lesson.word.content %></td>
+           <td><%= lesson.word_answer.content %></td>
+          </tr>
+           <% end %>
+        </table>
+      </div>
+     </div>
+  </body>
+</html>

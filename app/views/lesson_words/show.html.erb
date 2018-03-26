@@ -1,0 +1,22 @@
+<% provide(:title, "Home") %>
+<!DOCTYPE html>
+<html>
+  <head>
+    <title><%= yield(:title) %> | E lerning</title>
+  </head>
+  <body>
+    <div class="container">
+      <div class="box">
+        <p><%= @lesson.category.title %></p>
+        <h1><%= @lesson_word.word.content %></h1>
+        <% @lesson_word.word.word_answers.each do |word| %>
+          <%= form_for([@lesson, @lesson_word]) do |f| %> 
+          <div><%= f.hidden_field :word_answer_id, value: word.id %></div>
+          <h2><%= f.submit word.content, class: "btn btn-primary" %></h2>
+          <% end %>
+        <% end %>
+      </div>
+    </div>
+
+  </body>
+</html>

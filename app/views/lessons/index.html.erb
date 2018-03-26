@@ -1,0 +1,30 @@
+<% provide(:title, "Home") %>
+<!DOCTYPE html>
+<html>
+  <head>
+    <title><%= yield(:title) %> | E lerning</title>
+  </head>
+  <body>
+
+    <div class="container">
+      <aside class="col-md-6">
+        <h1><%= word.content %></h1>
+      </aside>
+
+      <aside class="col-md-6">
+        <h2>word_answer</h2>
+        <h2>word_answer</h2>
+        <h2>word_answer</h2>
+
+      <ul class="word_answers">
+       <% @word.word_answers.each do |answer| %>
+        <li>
+          <%= answer.content %>
+        </li>
+       <% end %>
+     </ul>
+      </aside>
+    </div>
+
+  </body>
+</html>
