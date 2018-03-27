@@ -17,8 +17,6 @@ class User < ApplicationRecord
   has_secure_password
   validates :password, presence: true, length: { minimum:6 }, allow_nil: true
 
-  
-
   def feed
     following_ids = "SELECT followed_id FROM relationships WHERE follower_id = :user_id"
     Lesson.where("user_id IN (#{following_ids}) OR user_id = :user_id", user_id:id)
