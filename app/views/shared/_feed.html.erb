@@ -1,7 +1,7 @@
 <% if @feed_items.any? %>
-
-   <% @feed_items.each do |feed_item| %>
-     <li><%= link_to feed_item.user.name, feed_item.user %> leaned <%= feed_item.result %> in Lesson "<%= feed_item.category.title %>" - <%= time_ago_in_words(feed_item.created_at) %> ago</li>
-    <% end %>
+  
+  <% @feed_items.each do |feed_item| %>
+    <li><%= link_to feed_item.user.name, feed_item.user %> leaned <%= feed_item.result %> in Lesson "<%= feed_item.category.title %>" - <%= time_ago_in_words(feed_item.created_at) %> ago</li>
+  <% end %>
 
 <% end %>
