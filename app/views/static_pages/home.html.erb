@@ -12,7 +12,10 @@
         <p><%= render 'shared/stats' %></p>
       </aside>
       <aside class="col-md-9">
-        <h1>Activity's record</h1>
+        <div class="box">
+          <h2>Activity's record</h2>
+          <%= render 'shared/feed' %>
+        </div>
       </aside>
     </div>
     <% else %>

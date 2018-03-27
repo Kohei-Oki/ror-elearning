@@ -11,6 +11,17 @@
     </section>
   </aside>
   <div class="col-md-8">
+    <ul class="activity">
+      <h2>Activity</h2>
+      <% @lessons.each do |lesson| %>
+        <% if lesson.category.lessons.find_by(user: current_user) != nil %>
+          <li>Leaned <%= lesson.result %> in Lesson "<%= lesson.category.title %>" - <%= time_ago_in_words(lesson.created_at) %> ago</li>
+        <% end %>
+      <% end %>
+
+      </ul>
       <%= render 'follow_form' if logged_in? %>
   </div>
 </div>
+
+<!-- asending -->
