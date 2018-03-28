@@ -2,7 +2,7 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title><%= yield(:title) %> | E lerning %></title>
+    <title><%= yield(:title) %> | E learning %></title>
   </head>
   <body>
     <h1>User list</h1>
@@ -18,5 +18,6 @@
       </li>
     <% end %>
     </ul>
+    <%= will_paginate @users, previous_label: '<i class="glyphicon glyphicon-hand-left"></i>', next_label: '<i class="glyphicon glyphicon-hand-right"></i>' %>
     </div>
   </body>

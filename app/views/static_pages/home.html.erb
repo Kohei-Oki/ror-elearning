@@ -9,7 +9,9 @@
     <div class="row">
       <aside class="col-md-3">
         <h1><%= current_user.name %></h1>
-        <p><%= render 'shared/stats' %></p>
+          <div class="stats">
+            <p class="stat"><%= render 'shared/stats' %></p>
+          </div>
       </aside>
       <aside class="col-md-9">
 
@@ -22,7 +24,7 @@
 
         <div class="box">
           <h2>Activity's record</h2>
-          <%= render 'shared/feed' %>
+            <%= render 'shared/feed' %>    
         </div>
       </aside>
     </div>
@@ -34,7 +36,7 @@
   </div>
   <div class ="button">
     <a href="/users/new">
-    <button class="btn btn-primary btn-lg"> Sign Up</button>
+    <button class="btn btn-primary btn-lg">Sign Up</button>
     </a>
   </div>
   <% end %>
