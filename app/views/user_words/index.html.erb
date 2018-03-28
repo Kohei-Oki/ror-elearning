@@ -1,0 +1,25 @@
+<% provide(:title, "Category") %>
+<!DOCTYPE html>
+<html>
+  <head>
+    <title><%= yield(:title) %> | E lerning</title>
+  </head>
+  <body>
+    <aside class="col-md-6">
+    <p>Word List</p>
+      <% @lessons.each do |lesson| %>
+        <% lesson.category.words.each do |word| %>
+          <li><%= word.content %></li>
+        <% end %>
+      <% end %>
+    </aside>
+
+    <aside class="col-md-6">
+    <p>Word Answers</p>
+      <% @lessons.each do |lesson| %>
+        <% lesson.category.words.each do |word| %>
+          <li><%= word.correct_answer.content %></li>
+        <% end %>
+      <% end %>
+    </aside>
+  </body>
