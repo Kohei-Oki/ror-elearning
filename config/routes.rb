@@ -22,6 +22,8 @@ Rails.application.routes.draw do
         resources :word_answers
       end
     end
+
+  resources :user_words
   
   resources :relationships, only: [:create, :destroy]
 

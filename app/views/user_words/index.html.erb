@@ -1,0 +1,14 @@
+<% provide(:title, "Category") %>
+<!DOCTYPE html>
+<html>
+  <head>
+    <title><%= yield(:title) %> | E lerning</title>
+  </head>
+  <body>
+    <p>Word List</p>
+      <% @lessons.each do |lesson| %>
+        <% lesson.category.words.each do |word| %>
+          <li><%= word.content %></li>
+        <% end %>
+      <% end %>
+  </body>
