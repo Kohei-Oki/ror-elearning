@@ -1,31 +1,28 @@
 <h1>Category Details</h1>
-
 <div class ="box">
-<p>
-  <strong>Title:</strong>
-  <%= @category.title %>
-</p>
+  <p>
+    <strong>Title:</strong>
+    <%= @category.title %>
+  </p>
+  <p>
+    <strong>Description:</strong>
+    <%= @category.description %>
+  </p>
+  <%= link_to "View All Categories", categories_path %>
 
-<p>
-  <strong>Description:</strong>
-  <%= @category.description %>
-</p>
-<div class="button">
-    <%= link_to "Add Word" , new_category_word_path(@category.id), class: "btn btn-primary btn-lg"%>
-
-</div>
-<%= link_to "View All Categories", categories_path %>
-</div>
-
-<h1>Word</h1>
-<div class ="box">
-  <ul class="words">
+  <h2 class="word">Words List</h2>
+  <table class="words">
     <% @category.words.each do |word| %>
-      <li>
-        <%= word.content %>
-        <%= link_to "Show", [word.category,word] %>
-        <%= link_to "Edit", edit_category_word_path(word.category.id,word.id) %>
-        <%= link_to "Delete", [word.category,word], method: :delete, data: {confirm: "You sure?"} %>
-      </li>
+      <tr>
+        <td><%= word.content %></td>
+        <td><%= link_to "Show", [word.category,word] %></td>
+        <td><%= link_to "Edit", edit_category_word_path(word.category.id,word.id) %></td>
+        <td><%= link_to "Delete", [word.category,word], method: :delete, data: {confirm: "You sure?"} %></td>
+      </tr>
     <% end %>
+  </table>
+
+    <div class="button">
+    <%= link_to "Add Word" , new_category_word_path(@category.id), class: "btn btn-primary btn-lg"%>
+    </div>
 </div>

@@ -20,7 +20,7 @@
         <%= form_for(@lesson) do |f| %>
         <div><%= hidden_field_tag :category_id, category.id %></div>
           <% if category.lessons.find_by(user: current_user) != nil %>
-            <%= link_to "Result", lesson_path(category.lessons.find_by(user: current_user)), class: "btn btn-primary" %>
+            <%= link_to "Result", lesson_path(category.lessons.find_by(user: current_user)), class: "btn btn-success" %>
           <% else %>
             <%= f.submit "Learn", class: "btn btn-primary" %>
           <% end %>

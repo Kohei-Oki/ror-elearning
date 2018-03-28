@@ -2,17 +2,17 @@
 
 <h1>Category</h1>
 <div class ="box">
-  <ul class="categories">
+  <table class="categories">
     <% @categories.each do |category| %>
-      <li>
-        <%= link_to category.title, category %>
-        <%= category.description %>
-        <%= link_to "Show", category %>
-        <%= link_to "Edit", edit_category_path(category) %>
-        <%= link_to "Delete", category, method: :delete, data: {confirm: "You sure?"} %>
-      </li>
+      <tr>
+        <td><%= link_to category.title, category %></td>
+        <td><%= category.description %></td>
+        <td><%= link_to "Show", category %></td>
+        <td><%= link_to "Edit", edit_category_path(category) %></td>
+        <td><%= link_to "Delete", category, method: :delete, data: {confirm: "You sure?"} %></td>
+      </tr>
     <% end %>
-  </ul>
+  </table>
   <div class="button">
       <a href="/admin/categories/new">
       <button class="btn btn-primary btn-lg">Add</button>
