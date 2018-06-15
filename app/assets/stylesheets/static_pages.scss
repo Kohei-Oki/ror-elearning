@@ -8,9 +8,6 @@ h2{
   padding-bottom: 20px;
 }
 
-.home{
-  background-image: url("IMG_3170.jpg");
-}
 
 .button{
   text-align: center;
@@ -32,4 +29,103 @@ h2{
 
 .stats a{
   color: black;
+}
+
+ .video-wrap {
+  width:100%;
+  position: relative;
+  z-index: 1;
+  display: block;
+  border :0;
+  margin-left:0;
+}
+          
+.text-on-video {
+  z-index:1;
+  font-family: serif;
+  color: #fff;
+  font-size: 400%;
+  position: absolute;
+  top: 100px;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  margin: auto;
+  h2 {
+    font-size: 40px;
+    padding-top:60px;
+  }
+  p {
+    font-size: 20px;
+  }
+}
+
+@media only screen and (min-width: 1222px) {
+  .background_movie {
+    display: block !important;
+    height: 1082px; 
+    margin-top: -197.5px; 
+    margin-left: 0px; 
+    margin-bottom:-405px;
+    width:100%;
+  }
+  .back-cover{
+    display: none !important;
+  }
+  .text-on-video{
+    top:300px;
+  }
+}
+
+@media only screen and (min-width: 767px) and (max-width: 1222px) {
+  .background_movie { 
+    display: block !important;
+    height: 809px; 
+    margin-top: -189.5px; 
+    margin-left: 0px; 
+    margin-bottom:-240px;
+    width:100%;
+  }
+  .back-cover{
+    display: none !important;
+  }
+  .text-on-video{
+    top:248px;
+  }
+}
+
+@media only screen and (max-width: 767px) {
+  .background_movie {
+    display: none !important;
+  }
+  .video-wrap {
+    display: none !important;
+  }
+ .back-cover{
+    
+    background-image: url('IMG_3170.jpg');
+    background-size: cover;
+    display: flex !important;
+    justify-content: center;
+    height: 300px;
+    background-position: center center;
+    position: relative;
+    h2 {
+      padding-top:96px;
+      color : #fff;
+    }
+    p {
+      color : #fff;
+    }
+  }
+  .text-on-video{
+    display: none !important;
+  }
+}
+
+.under-video{
+  position: relative;
+  background-color: #fff;
+  z-index: 2;
+  height :410px;
 }

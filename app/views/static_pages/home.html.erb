@@ -1,44 +1,68 @@
 <% provide(:title, "Home") %>
 <!DOCTYPE html>
-<html>
-  <head>
-    <title><%= yield(:title) %> | E lerning</title>
-  </head>
-  <body class="home">
-    <% if logged_in? %>
-    <div class="row">
-      <aside class="col-md-3">
-        <h1><%= current_user.name %></h1>
-          <div class="stats">
-            <p class="stat"><%= render 'shared/stats' %></p>
-          </div>
-      </aside>
-      <aside class="col-md-9">
+    <html>
+        <head>
+            <title><%= yield(:title) %> | E lerning</title>
+        </head>
+            <body>
+                <% if logged_in? %>
+                <div class="row">
+                    <aside class="col-md-3">
+                        <h1><%= current_user.name %></h1>
+                        <div class="stats">
+                            <p class="stat"><%= render 'shared/stats' %></p>
+                        </div>
+                    </aside>
+                  
+                    <aside class="col-md-9">
+                        <div class ="button">
+                            <a href="/user_words">
+                            <button class="btn btn-primary btn-lg">Words</button>
+                            </a>
+                        </div>
+                </div>
+                    <div class="box">
+                        <h2>Activity's record</h2>
+                        <%= render 'shared/feed' %>    
+                    </div>
+                    </aside>
+                </div>
 
-        <div class ="button">
-          <a href="/user_words">
-           <button class="btn btn-primary btn-lg">Words</button>
-          </a>
-        </div>
-    </div>
+                <% else %>
 
-        <div class="box">
-          <h2>Activity's record</h2>
-            <%= render 'shared/feed' %>    
-        </div>
-      </aside>
-    </div>
-    <% else %>
+                 <div class="video-wrap">
+                    <div class="text-on-video cover-text text-center">
+                        <h2>Welcome to <span class="sp-br"> E-learning System</span></h2>
+                        <p>Let's study English with us</p>
+                    </div>
+                    <iframe class="background_movie" id="player" frameborder="0" allowfullscreen="1" allow="autoplay; encrypted-media" title="YouTube video player" width="640" height="360" src="https://www.youtube.com/embed/UAk5aurzqUQ?autoplay=1&amp;controls=0&amp;showinfo=0&amp;rel=0&amp;start=0&amp;loop=1&amp;mute=1&amp;playlist=UAk5aurzqUQ" data-gtm-yt-inspected-324964_5953="true"></iframe>
+                </div>
 
-  <div class = "home_h1">
-    <h1>Welcome to </h1>
-    <h1>E-lerning System</h1>
-  </div>
-  <div class ="button">
-    <a href="/users/new">
-    <button class="btn btn-primary btn-lg">Sign Up</button>
-    </a>
-  </div>
-  <% end %>
-  </body>
-</html>
+                <div class="back-cover">
+                    <div class="cover-text text-center ">
+                        <h2>Welcome to <span class="sp-br"> E-learning System</span></h2>
+                        <p>Let's study English with us</p>
+                    </div>
+                </div>
+                    </div>
+                </div>
+
+                <div class="container-fluid top under-video">
+                    <div class="row">
+                        <div class="button">
+                            <a href="/users/new">
+                            <button class="btn btn-primary btn-lg">Sign Up</button>
+                            </a>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="button">
+                            <a href="/login">
+                            <button class="btn btn-primary btn-lg">Log in</button>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            <% end %>
+        </body>
+    </html>
